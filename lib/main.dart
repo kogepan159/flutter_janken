@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter じゃんけん！'),
     );
   }
 }
@@ -94,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset('images/kogepan.png', height: 200),
             Text(
               'こげぱんと\nじゃんけんして\n勝てると思っているのか？',
             ),
