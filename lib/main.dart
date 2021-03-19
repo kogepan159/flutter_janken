@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_janken/answer.dart';
 
 void main() {
   runApp(MyApp());
@@ -103,16 +104,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPrimary: Colors.white,
               ),
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => AnswerPage(),
+                  ),
+                );
               },
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
