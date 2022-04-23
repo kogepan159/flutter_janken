@@ -1,0 +1,22 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: [ master ] # 任意のbranch
+  pull_request:
+    branches: [ master ] # 任意のbranch
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04  # 実行するOS
+    steps:
+    - uses: actions/checkout@v3
+    - name: Flutter action
+      uses: subosito/flutter-action@v2.3.0 # Flutterを取得
+      with:
+        channel: 'stable'
+        cache: true # キャッシュを取得して高速化
+    - run: flutter --version
+    - run: flutter pub get # 必要なライブラリをダウンロード
+    - run: flutter format --set-exit-if-changed . # フォーマット確認
+    - run: flutter analyze . # Linterの実行
